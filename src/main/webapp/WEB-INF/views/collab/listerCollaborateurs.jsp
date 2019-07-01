@@ -6,10 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>SGP - App</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap-4.3.1-dist/css/bootstrap.css">
+
 </head>
 
 
@@ -38,16 +36,8 @@
 
 			<h1 class="display-4">Les collaborateurs</h1>
 
-			<ul>
-			<%
-			List<String> listeNoms =(List<String>)request.getAttribute("listeNoms");
-			for (String nom: listeNoms) {
-			%>
-				<li><%= nom %></li>
-				<%
-				}
-				%>
-			</ul>
+			
+
 
 			<div class="d-flex flex-column">
 				<div class="p-2">
