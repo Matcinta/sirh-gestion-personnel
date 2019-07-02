@@ -17,8 +17,10 @@
 <header>
 
 	<div class="d-flex flex-row bd-highlight mb-3">
-		<div class="p-2 bd-highlight">Collaborateurs</div>
-		<div class="p-2 bd-highlight">Statistiques</div>
+		<div class="p-2 bd-highlight"> <a href="<c:url value='/collaborateurs/lister'/>"
+									>Collaborateurs</a></div>
+		<div class="p-2 bd-highlight"><a href="<c:url value='/collaborateurs/statistiques'/>"
+									>Statistiques</a></div>
 		<div class="p-2 bd-highlight">Activités</div>
 	</div>
 </header>
@@ -99,9 +101,9 @@
 								<div class="element">
 									<div class="text-left">
 										<p class="card-text">
-											Matricule: ${matricule}
+											Matricule: ${collab.matricule}
 											</br>Departement: RH
-											</br>Email: ${emailPro}
+											</br>Email: ${collab.emailPro}
 											
 											</br>Téléphone: 06.65.38.97.45
 										</p>
