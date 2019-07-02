@@ -27,9 +27,9 @@
 	<div class="container-fluid m-1">
 		<div class="text-right">
 
-			<button type="button" class="btn btn-info"
-				onclick="window.location.href = 'creer-collab.html';">Ajouter
-				un collaborateur</button>
+			<a href="<%=request.getContextPath()%>/collaborateurs/creer"
+					class="btn btn-info" role="button"
+aria-pressed="true">Ajouter un nouveau collaborateur</a>
 		</div>
 	</div>
 	<div class="d-flex flex-column bd-highlight mb-4">
@@ -88,7 +88,7 @@
 
 					<div class="card mb-4 shadow-sm">
 						<div class="card-header">
-							<h4 class="my-0 font-weight-normal"><%=col.getNom() %></h4>
+							<h4 class="my-0 font-weight-normal"><%=col.getNom() + " " + col.getPrenom() %></h4>
 						</div>
 						<div class="card-body">
 
@@ -99,8 +99,10 @@
 								<div class="element">
 									<div class="text-left">
 										<p class="card-text">
-											Fonction: Assistante de Direction </br>Departement: RH </br>Email:
-											rose@bootsrap.com </br>Téléphone: 06.65.38.97.45
+											Fonction: Assistante de Direction
+											</br>Departement: RH
+											</br>Email: <%=col.getEmailPro() %>
+											</br>Téléphone: 06.65.38.97.45
 										</p>
 									</div>
 								</div>
@@ -115,132 +117,10 @@
 	}
 					%>
 
-					<div class="card mb-4 shadow-sm">
-						<div class="card-header">
-							<h4 class="my-0 font-weight-normal">Pr Violet</h4>
-						</div>
-						<div class="card-body">
+		
 
-							<div class="d-flex justify-content-around">
-								<div class="element">
-									<img src="violet.jpg" alt="photo Melle Rose" />
-								</div>
-								<div class="element">
-									<div class="text-left">
-										<p class="card-text">
-											Fonction: Assistante de Direction </br>Departement: RH </br>Email:
-											rose@bootsrap.com </br>Téléphone: 06.65.38.97.45
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="text-right">
-								<button type="button" class="btn btn-info">Editer</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="card mb-4 shadow-sm">
-						<div class="card-header">
-							<h4 class="my-0 font-weight-normal">Mme Pervenche</h4>
-						</div>
-						<div class="card-body">
-
-							<div class="d-flex justify-content-around">
-								<div class="element">
-									<img src="pervenche.jpg" alt="photo Melle Rose" />
-								</div>
-								<div class="element">
-									<div class="text-left">
-										<p class="card-text">
-											Fonction: Assistante de Direction </br>Departement: RH </br>Email:
-											rose@bootsrap.com </br>Téléphone: 06.65.38.97.45
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="text-right">
-								<button type="button" class="btn btn-info">Editer</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="card-deck mb-3 text-center">
-					<div class="card mb-4 shadow-sm">
-						<div class="card-header">
-							<h4 class="my-0 font-weight-normal">Colonel Moutarde</h4>
-						</div>
-						<div class="card-body">
-
-							<div class="d-flex justify-content-around">
-								<div class="element">
-									<img src="moutarde.jpg" alt="photo Colonel Moutarde" />
-								</div>
-								<div class="element">
-									<div class="text-left">
-										<p class="card-text">
-											Fonction: Assistante de Direction </br>Departement: RH </br>Email:
-											rose@bootsrap.com </br>Téléphone: 06.65.38.97.45
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="text-right">
-								<button type="button" class="btn btn-info">Editer</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="card mb-4 shadow-sm">
-						<div class="card-header">
-							<h4 class="my-0 font-weight-normal">Mme LeBlanc</h4>
-						</div>
-						<div class="card-body">
-
-							<div class="d-flex justify-content-around">
-								<div class="element">
-									<img src="leblanc.jpg" alt="photo Melle Rose" />
-								</div>
-								<div class="element">
-									<div class="text-left">
-										<p class="card-text">
-											Fonction: Assistante de Direction </br>Departement: RH </br>Email:
-											rose@bootsrap.com </br>Téléphone: 06.65.38.97.45
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="text-right">
-								<button type="button" class="btn btn-info">Editer</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="card mb-4 shadow-sm">
-						<div class="card-header">
-							<h4 class="my-0 font-weight-normal">Dr Olive</h4>
-						</div>
-						<div class="card-body">
-
-							<div class="d-flex justify-content-around">
-								<div class="element">
-									<img src="olive.jpg" alt="photo Melle Rose" />
-								</div>
-								<div class="element">
-									<div class="text-left">
-										<p class="card-text">
-											Fonction: Assistante de Direction </br>Departement: RH </br>Email:
-											rose@bootsrap.com </br>Téléphone: 06.65.38.97.45
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="text-right">
-								<button type="button" class="btn btn-info">Editer</button>
-							</div>
-						</div>
-					</div>
+						
+					
 				</div>
 
 				<footer> </footer>
