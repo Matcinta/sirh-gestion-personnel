@@ -1,13 +1,15 @@
 <%@page import="dev.sgp.entite.Collaborateur"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>SGP - App</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap-4.3.1-dist/css/bootstrap.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/bootstrap-4.3.1-dist/css/bootstrap.css">
 
 </head>
 
@@ -27,9 +29,9 @@
 	<div class="container-fluid m-1">
 		<div class="text-right">
 
-			<a href="<%=request.getContextPath()%>/collaborateurs/creer"
-					class="btn btn-info" role="button"
-aria-pressed="true">Ajouter un nouveau collaborateur</a>
+			<a href="<c:url value='/collaborateurs/creer'/>"
+				class="btn btn-info" role="button" aria-pressed="true">Ajouter
+				un nouveau collaborateur</a>
 		</div>
 	</div>
 	<div class="d-flex flex-column bd-highlight mb-4">
@@ -37,7 +39,7 @@ aria-pressed="true">Ajouter un nouveau collaborateur</a>
 
 			<h1 class="display-4">Les collaborateurs</h1>
 
-			
+
 
 
 			<div class="d-flex flex-column">
@@ -77,53 +79,55 @@ aria-pressed="true">Ajouter un nouveau collaborateur</a>
 
 
 
-<div class="card-deck mb-3 text-center">
+				<div class="card-deck mb-3 text-center">
 
-<%
-	List<Collaborateur> collabs = (List<Collaborateur>) request.getAttribute("listeCollabs");
-
-	for (Collaborateur col: collabs) {
-%>
-
+					<c:forEach items="${listeCollabs}" var="collab">
+					
+					
 
 					<div class="card mb-4 shadow-sm">
 						<div class="card-header">
-							<h4 class="my-0 font-weight-normal"><%=col.getNom() + " " + col.getPrenom() %></h4>
+							<h4 class="my-0 font-weight-normal"> <c:out value='${collab.nom}'/> <c:out value='${collab.prenom}'/></h4>
 						</div>
 						<div class="card-body">
 
 							<div class="d-flex justify-content-around">
 								<div class="element">
-									<img src="<%=request.getContextPath()%>/<%=col.getPhoto() %>" alt="photo Melle Rose" />
+									<img src="<c:url value='/${collab.photo}'/>"
+										alt="photo Melle Rose" />
 								</div>
 								<div class="element">
 									<div class="text-left">
 										<p class="card-text">
-											Fonction: Assistante de Direction
+											Matricule: ${matricule}
 											</br>Departement: RH
-											</br>Email: <%=col.getEmailPro() %>
+											</br>Email: ${emailPro}
+											
 											</br>Téléphone: 06.65.38.97.45
 										</p>
 									</div>
 								</div>
 							</div>
 							<div class="text-right">
-								<button type="button" class="btn btn-info">Editer</button>
+								<a href="<c:url value='/collaborateurs/editer'/>"
+									class="btn btn-info" role="button" aria-pressed="true">Editer</a>
 							</div>
 						</div>
 					</div>
-					
-					<%
-	}
-					%>
 
-		
+					</c:forEach>
 
-						
-					
+
+
+
+
 				</div>
 
-				<footer> </footer>
+				<footer>
+				<div class="text-center">
+				(c) Mathilde Munier - Juillet 2019
+				</div>
+				</footer>
 
 				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

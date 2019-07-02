@@ -110,4 +110,9 @@
 
 </body>
 
+<footer>
+				<div class="text-center">
+				(c) Mathilde Munier - Juillet 2019
+				</div>
+				</footer>
 </html>

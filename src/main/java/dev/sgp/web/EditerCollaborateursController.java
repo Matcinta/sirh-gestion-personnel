@@ -13,21 +13,8 @@ public class EditerCollaborateursController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-  
-        
-        String matriculeParam = req.getParameter("matricule");
-        
-        if (matriculeParam == null) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            resp.getWriter().write("<p>Un matricule est attendu</p>");
-        } else {
-            
-            // permet d'exprimer le format du code qui est dans le corps de la reponse
-            resp.setContentType("text/html");
-            resp.getWriter().write("<h1>Edition de collaborateur</h1>"
-                    + "<p>Matricule:" + matriculeParam + "</p>");
-            
-        }
+        req.getRequestDispatcher("/WEB-INF/views/collab/editerCollaborateur.jsp")
+        .forward(req, resp);
       
     }
 

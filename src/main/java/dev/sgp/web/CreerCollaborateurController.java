@@ -48,7 +48,7 @@ public class CreerCollaborateurController extends HttpServlet {
             resp.setStatus(400);
             resp.getWriter().write("L'adresse saisie est incorrecte");
         } else {
-            Collaborateur collab = new Collaborateur(matricule, nom, prenom, dateNaissance, adresse,
+            Collaborateur collab = new Collaborateur(matricule, nom, prenom,     dateNaissance, adresse,
             		numSecu, emailPro, "images/avatar.png", dateHeureCreation, true);
 
             collabService.sauvegarderCollaborateur(collab);
