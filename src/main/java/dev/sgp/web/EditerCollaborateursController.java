@@ -28,8 +28,7 @@ public class EditerCollaborateursController extends HttpServlet {
                     + "<p>Matricule:" + matriculeParam + "</p>");
             
         }
-        
-    
+      
     }
 
     @Override
@@ -49,16 +48,5 @@ public class EditerCollaborateursController extends HttpServlet {
         } else {
             
         }
-        
-        
-    }
-    
-    
-    
-    
-    
-
-    
-    
-    
+    }    
 }

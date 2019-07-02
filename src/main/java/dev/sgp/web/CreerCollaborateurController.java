@@ -49,11 +49,13 @@ public class CreerCollaborateurController extends HttpServlet {
             resp.getWriter().write("L'adresse saisie est incorrecte");
         } else {
             Collaborateur collab = new Collaborateur(matricule, nom, dateNaissance, adresse,
-            		numSecu, emailPro, "test", dateHeureCreation, true);
+            		numSecu, emailPro, "images/avatar.png", dateHeureCreation, true);
 
             collabService.sauvegarderCollaborateur(collab);
+            
+            resp.sendRedirect(req.getContextPath()+"/collaborateurs/lister");
 
-            req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp").forward(req, resp);
+            //eq.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp").forward(req, resp);
         }
 
     

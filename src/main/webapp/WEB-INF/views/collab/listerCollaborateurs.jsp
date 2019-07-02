@@ -1,3 +1,4 @@
+<%@page import="dev.sgp.entite.Collaborateur"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
@@ -76,17 +77,24 @@
 
 
 
+<div class="card-deck mb-3 text-center">
 
-				<div class="card-deck mb-3 text-center">
+<%
+	List<Collaborateur> collabs = (List<Collaborateur>) request.getAttribute("listeCollabs");
+
+	for (Collaborateur col: collabs) {
+%>
+
+
 					<div class="card mb-4 shadow-sm">
 						<div class="card-header">
-							<h4 class="my-0 font-weight-normal">Melle Rose</h4>
+							<h4 class="my-0 font-weight-normal"><%=col.getNom() %></h4>
 						</div>
 						<div class="card-body">
 
 							<div class="d-flex justify-content-around">
 								<div class="element">
-									<img src="rose.jpg" alt="photo Melle Rose" />
+									<img src="<%=request.getContextPath()%>/<%=col.getPhoto() %>" alt="photo Melle Rose" />
 								</div>
 								<div class="element">
 									<div class="text-left">
@@ -102,6 +110,10 @@
 							</div>
 						</div>
 					</div>
+					
+					<%
+	}
+					%>
 
 					<div class="card mb-4 shadow-sm">
 						<div class="card-header">

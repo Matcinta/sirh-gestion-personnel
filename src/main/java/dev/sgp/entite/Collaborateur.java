@@ -14,6 +14,8 @@ public class Collaborateur {
     private String photo;
     private ZonedDateTime dateHeureCreation;
     private boolean actif;
+    private String intitulePoste;
+    private Departement departement;
 
     public Collaborateur() {
     }
